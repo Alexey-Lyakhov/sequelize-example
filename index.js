@@ -1,16 +1,26 @@
 const config = require('./config/config')
+const Router = require('express')
+const router = Router()
 const express = require('express')
 const app = express()
 const path = require('path')
 const db = require('./utils/database')
+ const userRoutes = require('./api/routes/user')
 
+
+
+app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use("/", (req, res, next) => {
+app.get("/", (req, res, next) => {
     res.sendFile(path.join(__dirname, 'public/main.html'))
 })
 
-//app.use('/', userRoutes)
+app.use('/api', userRoutes)
+
+
+
+
 
 
 async function start() {
@@ -21,5 +31,6 @@ async function start() {
         console.error('Unable to connect to the database:', error);
     }
 }
+
 
 start();
