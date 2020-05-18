@@ -1,7 +1,7 @@
 const environment = process.env.NODE_ENV
 
 const development = {
-    PORT: 3000,
+    PORT: 3011,
     host: 'localhost',
     username: 'root',
     password: null,

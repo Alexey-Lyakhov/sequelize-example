@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev" : "cross-env-shell NODE_ENV=development nodemon \"./index.js\""
+    "dev": "cross-env-shell NODE_ENV=development nodemon \"./index.js\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/Alexey-Lyakhov/sequelize-example",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
     "sequelize": "^5.21.9",
     "sqlite3": "^4.2.0"
   },
